@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import axios from "axios";
 import PackageCard from "./cardKategori";  // Pastikan path benar
 import Checkoutproduk from "../checkout/check";
+import Riwayat from "../../components/header/riwayat";
 
 export default function ScrollableTabsButtonPrevent() {
   const [categories, setCategories] = useState([]); // Data kategori dari API
@@ -43,15 +44,16 @@ export default function ScrollableTabsButtonPrevent() {
 
   // Filter paket berdasarkan kategori yang dipilih
   const filteredPackages = packages.filter(
-    (pkg) => pkg.categoryId === selectedCategory.id
+    (pkg) => pkg.categoryId == selectedCategory.id
   );
 
   // Fungsi untuk menambahkan paket ke checkout dan menyimpannya di DB
   const handleAddToCheckout = (pkg) => {
     // Membuat UUID untuk paket yang ditambahkan
+    const { id, ...pkgWithountId } = pkg;
     const uniquePkg = {
-      ...pkg,
-      uuid: uuidv4(), // Tambahkan UUID baru
+      id: uuidv4(),
+      ...pkgWithountId
     };
 
     // Update state lokal untuk checkout
@@ -77,16 +79,27 @@ export default function ScrollableTabsButtonPrevent() {
         }}
       >
         <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable prevent tabs example"
-        >
-          {categories.map((category) => (
-            <Tab key={category.id} label={category.name} />
-          ))}
-        </Tabs>
+      value={value}
+      onChange={handleChange}
+      variant="scrollable"
+      scrollButtons="auto"
+      aria-label="scrollable prevent tabs example"
+      sx={{
+        "& .MuiTabs-indicator": {
+          backgroundxColor: "#6a1b9a", // Warna ungu untuk indikator
+        },
+        "& .MuiTab-root": {
+          color: "#9c27b0", // Warna ungu untuk teks tab saat tidak aktif
+        },
+        "& .Mui-selected": {
+          color: "#6a1b9a", // Warna ungu lebih gelap untuk teks tab saat aktif
+        },
+      }}
+    >
+      {categories.map((category) => (
+        <Tab key={category.id} label={category.name} />
+      ))}
+    </Tabs>
       </Box>
       <Box sx={{ flexGrow: 1, marginTop: 2 }}>
         <Grid container spacing={2}>
@@ -121,6 +134,7 @@ export default function ScrollableTabsButtonPrevent() {
           </Grid>
         </Grid>
       </Box>
+      <Riwayat/>
     </Container>
   );
 }

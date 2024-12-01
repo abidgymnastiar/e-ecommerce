@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 const pages = [];
-const settings = ["Profile", "Logout"];
+const settings = ["Riwayat", "Logout"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,7 +47,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#52166d" }}>
+    <AppBar position="fixed" sx={{ backgroundColor: "#52166d" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -132,9 +132,9 @@ function ResponsiveAppBar() {
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Profile">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -156,7 +156,9 @@ function ResponsiveAppBar() {
               {settings.map((setting) => (
                 <MenuItem
                   key={setting}
-                  onClick={setting === "Logout" ? handleLogout : handleCloseUserMenu}
+                  onClick={
+                    setting === "Logout" ? handleLogout : handleCloseUserMenu
+                  }
                 >
                   <Typography sx={{ textAlign: "center" }}>
                     {setting}

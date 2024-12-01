@@ -6,34 +6,35 @@
     },
     {
       "phoneNumber": "08234567890",
-      "password": "securePass456"
+      "password": "securePass456",
+      "id": "dafc"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Freedom Paket",
       "description": "Paket internet kebebasan untuk semua kebutuhan."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Unlimited Paket",
       "description": "Paket tanpa batasan kuota untuk streaming dan browsing."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Paket Malam",
       "description": "Paket internet khusus untuk malam hari dengan harga terjangkau."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Combo Paket",
       "description": "Paket gabungan untuk internet, telepon, dan SMS."
     }
   ],
   "packages": [
     {
-      "id": 0,
+      "id": "0",
       "categoryId": 1,
       "name": "Freedom 2GB",
       "price": 20000,
@@ -41,7 +42,7 @@
       "details": "Paket data 2GB berlaku selama 30 hari."
     },
     {
-      "id": 1,
+      "id": "1",
       "categoryId": 1,
       "name": "Freedom 5GB",
       "price": 50000,
@@ -49,7 +50,7 @@
       "details": "Paket data 5GB berlaku selama 30 hari."
     },
     {
-      "id": 6,
+      "id": "6",
       "categoryId": 1,
       "name": "Freedom 5GB",
       "price": 50000,
@@ -57,7 +58,7 @@
       "details": "Paket data 5GB berlaku selama 30 hari."
     },
     {
-      "id": 2,
+      "id": "2",
       "categoryId": 2,
       "name": "Unlimited Harian",
       "price": 10000,
@@ -65,7 +66,7 @@
       "details": "Internet tanpa batas untuk satu hari."
     },
     {
-      "id": 3,
+      "id": "3",
       "categoryId": 2,
       "name": "Unlimited Bulanan",
       "price": 100000,
@@ -73,7 +74,7 @@
       "details": "Internet tanpa batas selama satu bulan."
     },
     {
-      "id": 4,
+      "id": "4",
       "categoryId": 3,
       "name": "Paket Malam 10GB",
       "price": 15000,
@@ -81,7 +82,7 @@
       "details": "Paket data malam dengan kuota 10GB."
     },
     {
-      "id": 5,
+      "id": "5",
       "categoryId": 4,
       "name": "Combo 3GB + 50 Menit",
       "price": 40000,
@@ -91,13 +92,32 @@
   ],
   "checkout": [
     {
-      "id": 0,
-      "categoryId": 1,
-      "name": "Freedom 2GB",
-      "price": 20000,
-      "duration": "30 hari",
-      "details": "Paket data 2GB berlaku selama 30 hari.",
-      "uuid": "5c215f79-d92d-48a1-89f9-5191a2e3f8a7"
+      "id": "401cab05-f9e0-458a-8834-d580b98920ec",
+      "categoryId": 2,
+      "name": "Unlimited Harian",
+      "price": 10000,
+      "duration": "1 hari",
+      "details": "Internet tanpa batas untuk satu hari."
+    },
+    {
+      "id": "439e3392-6b02-43e4-be9a-a2b160376bad",
+      "categoryId": 3,
+      "name": "Paket Malam 10GB",
+      "price": 15000,
+      "duration": "1 malam",
+      "details": "Paket data malam dengan kuota 10GB."
+    }
+  ],
+  "bayar": [
+    {
+      "id": "3c8c",
+      "total": 70000,
+      "timestamp": "2024-12-01T10:00:32.543Z"
+    },
+    {
+      "id": "b439",
+      "total": 110000,
+      "timestamp": "2024-12-01T10:30:24.578Z"
     }
   ]
 }

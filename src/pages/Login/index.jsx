@@ -15,7 +15,7 @@ const Login = () => {
 
   const paperStyle = {
     padding: 20,
-    height: 380,
+    height: 480,
     width: 400,
     margin: "20px auto",
   };
@@ -35,8 +35,8 @@ const Login = () => {
     }
 
     try {
-      // Send GET request to the mock API at port 3001
-      const response = await axios.get("http://localhost:3001/users", {
+      // Send GET request to the mock API at port 3004
+      const response = await axios.get("http://localhost:3004/users", {
         params: { phoneNumber, password },
       });
 
